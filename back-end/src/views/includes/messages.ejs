@@ -1,0 +1,29 @@
+<section>
+    <% if(erros.length > 0){ %>
+        <article class="mensagem-erro">
+            
+            <ul>
+                
+                <% erros.forEach(erro => {  %>
+                    <li><%= erro %></li>
+                <% }) %>
+            
+            </ul>
+        </article>
+        <% } %>
+</section>
+
+<section>
+    <% if(success.length > 0){ %>
+        <article class="mensagem-success">
+            
+            <ul>
+                
+                <% success.forEach(mensagem => {  %>
+                    <li><%= mensagem %></li>
+                <% }) %>
+            
+            </ul>
+        </article>
+        <% } %>
+</section>

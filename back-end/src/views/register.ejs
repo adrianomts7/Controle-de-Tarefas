@@ -1,0 +1,22 @@
+<%- include('includes/head') %>
+
+<section class="register">
+    <h1>Cadastre-se</h1>
+    <p>Complete os campos abaixos</p>
+
+    <form action="/register" method="post">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required placeholder="usuario@gmail.com">
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required placeholder="Digite o password aqui">
+
+        <input type="submit" value="Realizar Cadastro">
+
+    </form>
+
+</section>
+
+<%- include('includes/footer') %>

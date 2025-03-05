@@ -1,0 +1,15 @@
+<nav>
+    <ul>
+        <li><a href="/">Tarefas</a></li>
+    </ul>
+    <ul>
+        <% if(user){ %>
+            <li>
+                <a href="/tarefas">Cadastrar Tarefas</a>
+                <a href="/login/logout">Sair</a>
+            </li>
+        <% }else{ %>
+            <li><a href="/login">Entrar</a></li>
+        <% } %>
+    </ul>
+</nav>

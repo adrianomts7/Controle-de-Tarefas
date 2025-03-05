@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --font-principal: 'Roboto', sans-serif;
+    --primary: #007BFF;
+    --secondary: #343A40;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.erro404 section{
+    height: 600px;
+}
+
+.erro404 h1{
+    text-align: center;
+    font-size: 14em;
+    font-family: var(--font-principal);
+    color: black;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 50px 0px;
+    font-weight: bolder;
+}
+
+.erro404 p {
+    font-family: var(--font-principal);
+    font-size: 1.8em;
+    color: black;
+}
+
+section{
+    margin-top: 40px;
+    height: 550px;
+    width: 550px;
+    box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.login h1, .register h1{
+    color: var(--primary);
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 40px;
+}
+
+.login p, .register p{
+    text-align: center;
+    font-size: 1.3em;
+    margin: 20px 0px;
+    font-family: var(--font-principal);
+    color: var(--secondary);
+}
+
+label{
+    display: block;
+    font-size: 1.5em;
+    font-family: var(--font-principal);
+    color: var(--secondary);
+    margin: 7px 7px;
+}
+
+input{
+    display: block;
+    height: 33px;
+    width: 520px;
+    margin: 15px 7px;
+    padding-left: 8px;
+    font-size: 1.3em;
+    font-family: var(--font-principal);
+}
+
+input:hover{
+    border: 1px solid  #0056b3;
+}
+
+input[type="submit"]{
+    margin: 20px 7px;
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+    border-radius: 5%;
+    height: 38px;
+    border: 1px solid var(--primary);
+    border-radius: 5%;
+    width: 530px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.login a{
+    text-decoration: none;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.login a:hover{
+    text-decoration: underline;
+    color: #0056b3;
+}

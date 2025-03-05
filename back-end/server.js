@@ -16,13 +16,12 @@ const flash = require('connect-flash')
 
 const route = require('./routes')
 const path = require('path')
-// const {} = require('./src/middlewares/middleware')
+const { csrfMiddleware, middlewareGlobal } = require('./src/middlewares/middleware')
 // const helmet = require('helmet')
 const csurf = require('csurf')
 
 app.use(express.urlencoded({extended: true}))
 app.use(express.static(path.resolve(__dirname, '..','public')))
-console.log("Servindo arquivos estáticos de:", path.resolve(__dirname, '../public'));
 
 
 const sessionOptions = session({
@@ -47,6 +46,8 @@ app.use(flash())
 // app.use(helmet())
 
 // Colocar Middleware
+app.use(csrfMiddleware)
+app.use(middlewareGlobal)
 
 app.use(route)
 

@@ -1,0 +1,24 @@
+<%- include('includes/head') %>
+
+<section class="login">
+
+    <h1>Login</h1>
+    <p>Faça Login para acessar as tarefas</p>
+
+    <form action="/login/login" method="post">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="usuario@gmail.com" required>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required placeholder="Digite a sua password">
+
+        <input type="submit" value="Fazer Login">
+
+    </form>
+
+    <p>Se não tiver cadastro <a href="/register">Cadastre-se</a></p>
+</section>
+
+<%- include('includes/footer') %>

@@ -1,9 +1,12 @@
 <%- include('includes/head') %>
+<%- include('includes/nav') %>
 
 <section class="login">
 
     <h1>Login</h1>
     <p>Faça Login para acessar as tarefas</p>
+
+    <%- include('includes/messages') %>
 
     <form action="/login/login" method="post">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">

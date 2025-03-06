@@ -44,14 +44,14 @@ section{
     box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-.login h1, .register h1{
+h1{
     color: var(--primary);
     text-align: center;
     font-size: 2.5em;
     margin-top: 40px;
 }
 
-.login p, .register p{
+p{
     text-align: center;
     font-size: 1.3em;
     margin: 20px 0px;
@@ -69,7 +69,7 @@ label{
 
 input{
     display: block;
-    height: 33px;
+    height: 36px;
     width: 520px;
     margin: 15px 7px;
     padding-left: 8px;
@@ -103,7 +103,43 @@ input[type="submit"]:hover {
     cursor: pointer;
 }
 
-.login a:hover{
+.login a:hover, nav a:hover{
     text-decoration: underline;
     color: #0056b3;
+}
+
+nav{
+    width: 100%;
+    font-size: 1.6em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-principal);
+    margin-top: 15px;
+}
+
+nav li, .mensagem-erro li, .mensagem-sucesso li{
+    list-style: none;
+}
+
+nav a{
+    color: var(--primary);
+    text-decoration: none;
+    margin: 10px 25px;
+}
+
+.mensagem-erro{
+    color: red;
+    font-family: var(--font-principal);
+    font-size: 1.3em;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.mensagem-sucesso{
+    color: rgb(16, 129, 16);
+    font-family: var(--font-principal);
+    font-size: 1.3em;
+    text-align: center;
+    margin: 22px 0px;
 }

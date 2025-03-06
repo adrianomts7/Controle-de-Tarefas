@@ -1,8 +1,11 @@
 <%- include('includes/head') %>
+<%- include('includes/nav')  %>
 
 <section class="register">
     <h1>Cadastre-se</h1>
     <p>Complete os campos abaixos</p>
+
+    <%- include('includes/messages') %>
 
     <form action="/register" method="post">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">

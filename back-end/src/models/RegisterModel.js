@@ -19,11 +19,11 @@ class Register{
     async login(){
         this.valida()
         if(this.erros.length > 0) return
-        
+
         this.user = await RegisterModel.findOne({email: this.body.email})
         
         if(!this.user){
-            this.erros.push('Usuario não encontrado')
+            this.erros.push('Usuario Invalido')
             return
         }
 
@@ -38,8 +38,9 @@ class Register{
     async register(){
         this.valida()
         await this.userExists()
-        if(this.erros.length > 0) return
 
+        if(this.erros.length > 0) return
+        
         const hash = bcrypt.genSaltSync()
         this.body.password = bcrypt.hashSync(this.body.password, hash)
 
@@ -50,13 +51,16 @@ class Register{
         this.cleanUp()
         if(this.erros.length > 0) return
 
-        if(!validator.isEmail(this.body.email)) this.erros.push('E-mail invalido')
-        if(this.body.password.length < 3 || this.body.password.length > 15) this.erros.push('Senha Invalida')
+        if(!validator.isEmail(this.body.email)) this.erros.push('Email invalido')
+        if(this.body.password.length < 3 || this.body.password.length > 15) this.erros.push('Senha invalida')
     }
 
     async userExists(){
         this.user = await RegisterModel.findOne({email: this.body.email})
-        if(this.user) return this.erros.push('Usuario já existe')
+        if(this.user){
+            this.erros.push('Usuario já existe')
+            return
+        }
     }
 
     cleanUp(){
@@ -65,7 +69,6 @@ class Register{
                 this.body[key] = ''
             }
         }
-
         this.body = {
             email: this.body.email,
             password: this.body.password

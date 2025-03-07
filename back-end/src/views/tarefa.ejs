@@ -1,0 +1,40 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+
+<section class="tarefa">
+    <h1>Registro de Tarefa</h1>
+
+    <%- include('includes/messages') %>
+
+    <form action="/tarefa" method="post">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+        <label for="tarefa">Tarefa:</label>
+        <input type="text" name="tarefa" id="tarefa">
+
+        <label for="descricao">Descrição:</label>
+        <input type="text" name="descricao" id="descricao">
+
+        <label for="dataConclusao">Data Para Concluir a Tarefa:</label>
+        <input type="date" name="dataConclusao" id="dataConclusao">
+
+        <label for="categoria">Categoria:</label>
+        <select name="categoria" id="categoria">
+            <option value="Pessoal">Pessoal</option>
+            <option value="Profissional">Profissional</option>
+        </select>
+
+        <label for="status">Status:</label>
+        <select name="status" id="status">
+            <option value="Pendente">Pendente</option>
+            <option value="Em Andamento">Em Andamento</option>
+            <option value="Concluido">Concluido</option>
+        </select>
+
+        <input type="submit" value="Adicionar Tarefa">
+
+    </form>
+
+</section>
+
+<%- include('includes/footer') %>

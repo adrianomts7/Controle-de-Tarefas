@@ -1,0 +1,44 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+
+<section class="home">
+    <h1><%= tarefa.tarefa %></h1>
+    <%- include('includes/messages') %>
+
+    <% if(user){ %>
+        <table>
+            <tr>
+                <td>Descrição</td>
+                <td>Data de Criação</td>
+                <td>Data de Conclusão</td>
+                <td>Categoria</td>
+                <td>Status</td>
+            </tr>
+
+            <tr>
+                <td><%=tarefa.descricao %></td>
+                <td><%= new Date(tarefa.dataCriacao).toLocaleDateString("pt-BR") %></td>
+                <td><%= new Date(tarefa.dataConclusao).toLocaleDateString("pt-BR") %></td>
+                <td><%= tarefa.categoria %></td>
+                <td><%= tarefa.status %></td>
+            </tr>
+            
+            <tr>
+                <td colspan="5" class="editar"><a href="/tarefa/index/<%= tarefa._id %>">Editar Tarefa</a></td>
+                
+            </tr>
+
+            <tr>
+                <td colspan="5" class="delete"><a href="/tarefa/delete/<%= tarefa._id %>">Deletar Tarefa</a></td>
+            </tr>
+
+        </table>
+
+        <% } else { %>
+            <p>Não tem nenhuma tarefa registrada</p>
+        <% } %>
+
+</section>
+
+
+<%- include('includes/footer') %>

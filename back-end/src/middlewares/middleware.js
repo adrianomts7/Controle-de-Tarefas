@@ -10,3 +10,15 @@ exports.middlewareGlobal = (req, res, next) => {
     
     next()
 }
+
+exports.loginRequired = (req, res, next) => {
+    if(!req.session.user){
+        req.flash('erros', 'Você precisa fazer login')
+        req.session.save(() => {
+            res.redirect('/login')
+        })
+        return
+    }
+
+    next()
+}

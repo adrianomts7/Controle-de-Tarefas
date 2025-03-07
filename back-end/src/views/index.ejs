@@ -1,0 +1,37 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+
+<section class="home">
+    <h1>Tarefas</h1>
+    <%- include('includes/messages') %>
+
+    <% if(tarefas.length > 0 && user){ %>
+        <table>
+            <tr>
+                <td>Tarefa</td>
+                <td>Categoria</td>
+                <td>Status</td>
+            </tr>
+
+            <% tarefas.forEach(tarefa => {  %>
+
+               <tr>
+                    <td><%= tarefa.tarefa %></td>
+                    <td><%= tarefa.categoria %></td>
+                    <td><%= tarefa.status %></td>
+                    <td><a href="/tarefa/dados/<%= tarefa._id %>">Dados Completo da Tarefa</a></td>
+                    <td><a href=""></a></td>
+               </tr>
+
+            <% }) %>
+
+        </table>
+
+        <% } else { %>
+            <p>Não tem nenhuma tarefa registrada</p>
+        <% } %>
+
+</section>
+
+
+<%- include('includes/footer') %>

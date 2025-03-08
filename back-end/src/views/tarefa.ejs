@@ -3,19 +3,24 @@
 
 <section class="tarefa">
 
-    <% if(tarefa){ %>
-        <h1>Editar Tarefa</h1>
-       <% } else { %>
-            <h1>Registrar Tarefa</h1>
-    <% } %>
-
     <%- include('includes/messages') %>
-
-    <form action="/tarefa" method="post">
+            
+    <% if(tarefa._id){ %>
+        <h1>Editar Tarefa</h1>
+                
+        <form action="/tarefa/edit/<%= tarefa._id %>" method="post">
+                
+    <% } else { %>
+        <h1>Registrar Tarefa</h1>
+        
+        <form action="/tarefa" method="post">
+    
+    <% } %>    
+        
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
         <label for="tarefa">Tarefa:</label>
-        <input type="text" name="tarefa" id="tarefa">
+        <input type="text" name="tarefa" id="tarefa" value="<%= tarefa.nome %>">
 
         <label for="descricao">Descrição:</label>
         <input type="text" name="descricao" id="descricao">

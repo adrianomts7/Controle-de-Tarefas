@@ -1,7 +1,9 @@
 const Tarefa = require('../models/TerefaModel')
 
 exports.index = async (req, res) => {
-    res.render('tarefa', {tarefa: null})
+    res.render('tarefa', {
+        tarefa: {}
+    })
 }
 
 exports.register = async (req, res) => {
@@ -48,14 +50,14 @@ exports.edit = async (req,res) => {
         if(tarefa.erros.length > 0){
             req.flash('erros', tarefa.erros)
             req.session.save(() => {
-                return res.redirect('/tarefa/edit/:id')
+                return res.redirect('back')
             })
             return
         }
 
         req.flash('success', 'Tarefa Editada com Sucesso!')
         req.session.save(() => {
-            return res.redirect('back')
+            return res.redirect('/')
         })
 
     }

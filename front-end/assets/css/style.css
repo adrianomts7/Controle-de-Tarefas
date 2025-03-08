@@ -177,7 +177,7 @@ td{
 
 .editar a{
     margin-top: 30px;
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: rgb(56, 154, 56);
     font-family: var(--font-principal);
     text-decoration: none;
@@ -185,7 +185,7 @@ td{
 
 .delete a{
     margin-top: 30px;
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: rgb(226, 38, 38);
     font-family: var(--font-principal);
     text-decoration: none;
@@ -198,5 +198,27 @@ td{
 
 .delete a:hover{
     color: rgb(212, 0, 0);
+    transition-duration: 5s;
     text-decoration: underline;
+}
+
+.dadosTarefa a{
+    color: var(--primary);
+    text-decoration: none;
+    font-family: var(--font-principal);
+    font-size: 1em;
+}
+
+.dadosTarefa a:hover{
+    color: #0056b3;
+    text-decoration: underline;
+    transition-duration: 5s;
+}
+
+.filters{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

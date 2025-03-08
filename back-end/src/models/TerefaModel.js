@@ -5,7 +5,7 @@ const TarefaSchema = new mongoose.Schema({
     tarefa: {type: String, required: true},
     descricao: {type: String, default: ''},
     categoria: {type: String, required: true, enum: ['Profissional', 'Pessoal']},
-    status: {type: String, required: true, enum: ['Pendente', 'Em Andamento', 'Concluido']},
+    status: {type: String, required: true, enum: ['Pendente','Concluido']},
     dataCriacao: {type: Date, required: true, default: Date.now},
     dataConclusao: {type: Date, required: true},
 })
@@ -60,6 +60,21 @@ class Tarefa{
 
         const tarefa = await TarefaModel.findByIdAndDelete({_id: id})
         return tarefa
+    }
+
+    static async buscarCategoria(categoria){
+        if(typeof categoria !== 'string') return
+
+        const tarefa = await TarefaModel.find({categoria})
+        return tarefa
+    }
+
+    static async buscarStatus(status){
+        if(typeof status !== 'string') return
+
+        const tarefa = await TarefaModel.find({status: status})
+        return tarefa
+
     }
 
 }   

@@ -2,7 +2,7 @@
 <%- include('includes/nav') %>
 
 <section class="home">
-    <h1>Tarefas</h1>
+    <h1>Tarefas Registradas</h1>
     <%- include('includes/messages') %>
 
     <% if(tarefas.length > 0 && user){ %>
@@ -19,13 +19,38 @@
                     <td><%= tarefa.tarefa %></td>
                     <td><%= tarefa.categoria %></td>
                     <td><%= tarefa.status %></td>
-                    <td><a href="/tarefa/dados/<%= tarefa._id %>">Dados Completo da Tarefa</a></td>
-                    <td><a href=""></a></td>
+                    <td class="dadosTarefa"><a href="/tarefa/dados/<%= tarefa._id %>">Dados Completo da Tarefa</a></td>
+                    <td class="delete"><a href="/tarefa/delete/<%= tarefa._id %>">Delete</a></td>
                </tr>
 
             <% }) %>
-
+               
         </table>
+
+        <% if(tarefas.length >= 5){ %>
+
+        <div class="filters">
+            <form action="/filter/categoria" method="get">
+                <label for="categoria">Filtrar Categoria:</label>
+                <select name="categoria" id="categoria">
+                    <option value="Pessoal">Pessoal</option>
+                    <option value="Profissional">Profissional</option>
+                </select>
+                <input type="submit" value="Filtrar Categoria">
+            </form>
+
+            <form action="/filter/status" method="get">
+                <label for="status">Filtrar Status:</label>
+                <select name="status" id="status">
+                    <option value="Pendente">Pendente</option>
+                    <option value="Concluido">Concluido</option>
+                </select>
+                <input type="submit" value="Filtrar Status">
+            </form>
+
+        </div>
+
+        <% } %>
 
         <% } else { %>
             <p>Não tem nenhuma tarefa registrada</p>

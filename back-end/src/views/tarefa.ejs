@@ -2,7 +2,12 @@
 <%- include('includes/nav') %>
 
 <section class="tarefa">
-    <h1>Registro de Tarefa</h1>
+
+    <% if(tarefa){ %>
+        <h1>Editar Tarefa</h1>
+       <% } else { %>
+            <h1>Registrar Tarefa</h1>
+    <% } %>
 
     <%- include('includes/messages') %>
 
@@ -17,7 +22,7 @@
 
         <label for="dataConclusao">Data Para Concluir a Tarefa:</label>
         <input type="date" name="dataConclusao" id="dataConclusao">
-
+        
         <label for="categoria">Categoria:</label>
         <select name="categoria" id="categoria">
             <option value="Pessoal">Pessoal</option>
@@ -27,7 +32,6 @@
         <label for="status">Status:</label>
         <select name="status" id="status">
             <option value="Pendente">Pendente</option>
-            <option value="Em Andamento">Em Andamento</option>
             <option value="Concluido">Concluido</option>
         </select>
 

@@ -9,6 +9,8 @@ const { loginRequired } = require('./src/middlewares/middleware')
 
 //Home
 route.get('/', homeControllers.index)
+route.get('/filter/categoria', homeControllers.buscarCategoria)
+route.get('/filter/status', homeControllers.buscarStatus)
 
 // Register 
 route.get('/register', registerControllers.index)
@@ -26,5 +28,6 @@ route.get('/tarefa/index/:id', loginRequired, tarefaControllers.editIndex)
 route.post('/tarefa/edit/:id', loginRequired, tarefaControllers.edit)
 route.get('/tarefa/delete/:id', loginRequired, tarefaControllers.delete)
 route.get('/tarefa/dados/:id', loginRequired, tarefaControllers.dados)
+
 
 module.exports = route

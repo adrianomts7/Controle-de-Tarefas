@@ -1,7 +1,7 @@
 const Tarefa = require('../models/TerefaModel')
 
-exports.index = (req, res) => {
-    res.render('tarefa')
+exports.index = async (req, res) => {
+    res.render('tarefa', {tarefa: null})
 }
 
 exports.register = async (req, res) => {

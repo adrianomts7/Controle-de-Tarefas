@@ -4,10 +4,10 @@
 O Controle de Tarefas é uma aplicação web desenvolvida com Node.js e MongoDB, permitindo que os usuários criem, editem, excluam e organizem tarefas.
 
 O projeto conta com:
-✅ CRUD completo (Criar, Ler, Atualizar, Excluir) de tarefas
-✅ Autenticação de usuário (Cadastro e Login seguro)
-✅ Proteção contra ataques CSRF
-✅ Validação de dados do usuário
+- CRUD completo (Criar, Ler, Atualizar, Excluir) de tarefas
+- Autenticação de usuário (Cadastro e Login seguro)
+- Proteção contra ataques CSRF
+- Validação de dados do usuário
 
 
 # 🛠 Tecnologias utilizadas

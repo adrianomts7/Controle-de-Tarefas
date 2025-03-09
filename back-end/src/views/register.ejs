@@ -3,11 +3,11 @@
 
 <section class="register">
     <h1>Cadastre-se</h1>
-    <p>Complete os campos abaixos</p>
+    <p class="messages">Complete os campos abaixos</p>
 
     <%- include('includes/messages') %>
 
-    <form action="/register" method="post">
+    <form action="/register" method="post" class="form-register">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
         <label for="email">Email:</label>

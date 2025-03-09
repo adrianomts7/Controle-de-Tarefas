@@ -4,11 +4,11 @@
 <section class="login">
 
     <h1>Login</h1>
-    <p>Faça Login para acessar as tarefas</p>
+    <p class="messages">Faça Login para acessar as tarefas</p>
 
     <%- include('includes/messages') %>
 
-    <form action="/login/login" method="post">
+    <form action="/login/login" method="post" class="form-login">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
         <label for="email">Email:</label>

@@ -222,3 +222,57 @@ td{
     align-items: center;
     flex-direction: column;
 }
+
+@media (max-width: 600px) {
+    section{
+        width: 100vw;
+        height: 100vh;
+        box-shadow: none;
+        padding: 5px;
+    }
+
+    input, select{
+        width: 95vw;
+    }
+
+    select{
+        font-size: 1em;
+    }
+
+    input[type="submit"]{
+        margin: 0px;
+        width: 95vw;
+    }
+    
+    nav{
+        flex-flow: column wrap;
+        text-align: center;
+    }
+
+    nav li{
+        margin-top: 15px;
+    }
+
+    .home{
+        width: 80vw;
+    }
+
+    table{
+       display: block;
+       margin-top: 30px;
+       overflow-x: auto;
+    }
+
+    tr{
+        display: table-row;
+    }
+
+    td{
+        display: table-cell;
+        padding: 10px;
+        text-align: center;
+        font-size: 1.5em;
+        color: #343A40;
+    }
+
+}
